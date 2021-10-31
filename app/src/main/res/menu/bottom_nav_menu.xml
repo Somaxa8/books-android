@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_my_books"
+        android:icon="@drawable/ic_baseline_menu_book_24"
+        android:title="@string/title_my_books" />
+
+    <item
+        android:id="@+id/navigation_my_favorites"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="@string/title_my_favorites" />
+
+    <item
+        android:id="@+id/navigation_upload_books"
+        android:icon="@drawable/ic_baseline_cloud_upload_24"
+        android:title="@string/title_upload_book" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/title_profile" />
+
+</menu>

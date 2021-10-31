@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.somacode.books.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_my_books"
+        android:name="com.somacode.books.ui.my_books.MyBooksFragment"
+        android:label="@string/title_my_books"
+        tools:layout="@layout/fragment_my_books" />
+
+    <fragment
+        android:id="@+id/navigation_my_favorites"
+        android:name="com.somacode.books.ui.my_favorites.MyFavoritesFragment"
+        android:label="@string/title_my_favorites"
+        tools:layout="@layout/fragment_my_favorites" />
+
+    <fragment
+        android:id="@+id/navigation_upload_books"
+        android:name="com.somacode.books.ui.upload_book.UploadBookFragment"
+        android:label="@string/title_upload_book"
+        tools:layout="@layout/fragment_upload_book" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.somacode.books.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

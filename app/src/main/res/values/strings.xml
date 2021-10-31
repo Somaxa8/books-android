@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Books</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_my_books">My Books</string>
+    <string name="title_my_favorites">My Favorites</string>
+    <string name="title_upload_book">Upload Book</string>
+    <string name="title_profile">Profile</string>
 </resources>
