@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="80dp">
+
+        <ImageView
+            android:layout_width="220dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logodark" />
+
+        <TextView
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="20dp"
+            android:autoSizeTextType="uniform"
+            android:text="Access your account"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:boxStrokeColor="@color/box_stroke"
+            android:hint="Email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/box_stroke"
+            app:passwordToggleEnabled="true"
+            android:hint="Password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="Login" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+
+            <TextView
+                android:layout_width="170dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:autoSizeTextType="uniform"
+                android:text="You are not registered?"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:autoSizeTextType="uniform"
+                android:text="Create an account"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/purple_200" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:autoSizeTextType="uniform"
+            android:text="Made by Somaxa8, contact me!"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/github"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#00FFFFFF"
+                android:gravity="center"
+                app:icon="@drawable/github"/>
+            <Button
+                android:id="@+id/twitter"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#00FFFFFF"
+                android:gravity="center"
+                app:icon="@drawable/twitter"/>
+            <Button
+                android:id="@+id/mail"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:background="#00FFFFFF"
+                android:gravity="center"
+                app:icon="@drawable/ic_baseline_mail_24"/>
+            <Button
+                android:id="@+id/linkedin"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:background="#00FFFFFF"
+                android:gravity="center"
+                app:icon="@drawable/linkedin"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
