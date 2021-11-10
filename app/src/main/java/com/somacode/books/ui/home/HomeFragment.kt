@@ -1,41 +1,61 @@
 package com.somacode.books.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import com.somacode.books.R
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.somacode.books.adapter.BookAdapter
 import com.somacode.books.databinding.FragmentHomeBinding
+import com.somacode.books.model.Book
+import com.somacode.books.service.BookService
+import com.somacode.books.service.tool.PaginationTool
 
 class HomeFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private val homeViewModel: HomeViewModel by viewModels()
     private var _binding: FragmentHomeBinding? = null
+    val books: MutableList<Book> = mutableListOf()
+    var isLoading: Boolean = false
+    val isLastPage: Boolean = false
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+        val linearLayoutManager = LinearLayoutManager(context)
+        binding.bookList.layoutManager = linearLayoutManager
+        val bookAdapter = BookAdapter(books)
+        binding.bookList.adapter = bookAdapter
+        binding.bookList.addOnScrollListener(object: PaginationTool(linearLayoutManager) {
+            override fun isLoading(): Boolean = isLoading
+
+            override fun isLastPage(): Boolean = isLastPage
+
+            override fun loadMoreItems() {
+                isLoading = true
+                PAGE++
+                Log.v("Pagina:", "$PAGE")
+                getBooks(bookAdapter, PAGE - 1)
+            }
+
         })
+        getBooks(bookAdapter, 0)
+
+
         return root
+    }
+
+    fun getBooks(bookAdapter: BookAdapter, page: Int) {
+        BookService.getBooks(bookAdapter, books, page, 10) {
+            isLoading = false
+        }
     }
 
     override fun onDestroyView() {

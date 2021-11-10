@@ -24,8 +24,7 @@ class MyBooksFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        myBooksViewModel =
-            ViewModelProvider(this).get(MyBooksViewModel::class.java)
+        myBooksViewModel = ViewModelProvider(this).get(MyBooksViewModel::class.java)
 
         _binding = FragmentMyBooksBinding.inflate(inflater, container, false)
         val root: View = binding.root

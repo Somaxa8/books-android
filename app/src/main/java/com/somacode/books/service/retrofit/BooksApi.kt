@@ -1,18 +1,25 @@
-package com.somacode.books.service
+package com.somacode.books.service.retrofit
 
+import com.somacode.books.model.Book
 import com.somacode.books.model.response.LoginResponse
 import io.reactivex.rxjava3.core.Single
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface BooksApi {
 
+    // OAuth
     @POST("/public/oauth/login")
     @FormUrlEncoded
     fun login(
         @Field("username") username: String,
         @Field("password") password: String
     ): Single<LoginResponse>
+
+    // Books
+    @GET("/public/books")
+    fun getBooks(
+        @Query("page") page: Int,
+        @Query("size") size: Int
+    ): Single<MutableList<Book>>
 
 }

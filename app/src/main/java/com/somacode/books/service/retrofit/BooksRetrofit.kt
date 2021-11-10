@@ -1,4 +1,4 @@
-package com.somacode.books.service
+package com.somacode.books.service.retrofit
 
 import com.google.gson.GsonBuilder
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
