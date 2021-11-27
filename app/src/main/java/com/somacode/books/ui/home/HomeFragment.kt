@@ -1,7 +1,7 @@
 package com.somacode.books.ui.home
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.somacode.books.adapter.BookAdapter
+import com.somacode.books.controller.BookActivity
 import com.somacode.books.databinding.FragmentHomeBinding
 import com.somacode.books.model.Book
 import com.somacode.books.service.BookService
@@ -29,6 +30,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        // Config RecyclerView
         val linearLayoutManager = LinearLayoutManager(context)
         binding.bookList.layoutManager = linearLayoutManager
         val bookAdapter = BookAdapter(books)
@@ -41,13 +43,19 @@ class HomeFragment : Fragment() {
             override fun loadMoreItems() {
                 isLoading = true
                 PAGE++
-                Log.v("Pagina:", "$PAGE")
                 getBooks(bookAdapter, PAGE - 1)
             }
 
         })
-        getBooks(bookAdapter, 0)
 
+        bookAdapter.onItemClick = {
+            val intent = Intent(context, BookActivity::class.java)
+            intent.putExtra("id", books[it].id!!)
+            context?.startActivity(intent)
+        }
+
+        // Call api
+        getBooks(bookAdapter, 0)
 
         return root
     }

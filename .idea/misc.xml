@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.20520833333333333" />
+        <entry key="app/src/main/res/drawable/splash_background.xml" value="0.23229166666666667" />
+        <entry key="app/src/main/res/layout-v26/activity_book.xml" value="0.2265625" />
+        <entry key="app/src/main/res/layout/activity_book.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.2" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_book.xml" value="0.17" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
@@ -14,6 +17,7 @@
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_upload_book.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_book.xml" value="0.21614583333333334" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.18958333333333333" />
         <entry key="app/src/main/res/xml/network_security_config.xml" value="0.1" />
       </map>
@@ -24,5 +28,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>

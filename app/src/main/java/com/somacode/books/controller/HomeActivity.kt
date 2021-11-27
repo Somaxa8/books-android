@@ -31,7 +31,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_my_books, R.id.navigation_my_favorites, R.id.navigation_upload_books, R.id.navigation_profile
             )
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
 }

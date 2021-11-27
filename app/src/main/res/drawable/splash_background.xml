@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list android:opacity="opaque"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/design_default_color_on_secondary"/>
+    <item android:width="220dp" android:height="55dp" android:gravity="center">
+        <bitmap android:src="@drawable/logodark"/>
+    </item>
+</layer-list>
