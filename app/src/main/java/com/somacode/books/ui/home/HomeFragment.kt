@@ -7,7 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.Orientation
 import com.somacode.books.adapter.BookAdapter
 import com.somacode.books.controller.BookActivity
 import com.somacode.books.databinding.FragmentHomeBinding
@@ -31,11 +34,11 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         // Config RecyclerView
-        val linearLayoutManager = LinearLayoutManager(context)
-        binding.bookList.layoutManager = linearLayoutManager
+        val gridLayout = GridLayoutManager(context, 2)
+        binding.bookList.layoutManager = gridLayout
         val bookAdapter = BookAdapter(books)
         binding.bookList.adapter = bookAdapter
-        binding.bookList.addOnScrollListener(object: PaginationTool(linearLayoutManager) {
+        binding.bookList.addOnScrollListener(object: PaginationTool(gridLayout) {
             override fun isLoading(): Boolean = isLoading
 
             override fun isLastPage(): Boolean = isLastPage

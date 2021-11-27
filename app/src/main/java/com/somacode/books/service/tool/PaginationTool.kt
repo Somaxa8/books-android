@@ -1,9 +1,9 @@
 package com.somacode.books.service.tool
 
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class PaginationTool(val linearLayoutManager: LinearLayoutManager): RecyclerView.OnScrollListener() {
+abstract class PaginationTool(private val layoutManager: GridLayoutManager): RecyclerView.OnScrollListener() {
 
     companion object {
         val SIZE: Int = 10
@@ -13,9 +13,9 @@ abstract class PaginationTool(val linearLayoutManager: LinearLayoutManager): Rec
     override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
         super.onScrolled(recyclerView, dx, dy)
 
-        val visibleItemCount = linearLayoutManager.childCount
-        val totalItemCount = linearLayoutManager.itemCount
-        val firstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition()
+        val visibleItemCount = layoutManager.childCount
+        val totalItemCount = layoutManager.itemCount
+        val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
 
         if (!isLoading() && !isLastPage()) {
             if ((visibleItemCount + firstVisibleItemPosition) >= totalItemCount && firstVisibleItemPosition >= 0 && totalItemCount >= SIZE) {

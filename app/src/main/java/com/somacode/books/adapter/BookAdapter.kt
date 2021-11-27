@@ -15,7 +15,7 @@ class BookAdapter(val books: MutableList<Book>): RecyclerView.Adapter<BookAdapte
     class BookViewHolder(val view: View): RecyclerView.ViewHolder(view) {
         fun render(book: Book) {
             view.book.bookTitle.text = book.title
-            view.book.bookAuthor.text = book.author
+            book.author?.let { view.book.bookAuthor.text = "(${book.author})" }
             book.cover?.let {
                 Picasso.get().load(book.cover!!.url).into(view.bookCover)
             } ?: run {
