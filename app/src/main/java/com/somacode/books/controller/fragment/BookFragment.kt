@@ -35,7 +35,7 @@ class BookFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_book, container, false)
+        return inflater.inflate(R.layout.item_book, container, false)
     }
 
     companion object {

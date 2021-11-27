@@ -22,4 +22,9 @@ interface BooksApi {
         @Query("size") size: Int
     ): Single<MutableList<Book>>
 
+    @GET("/public/books/{id}")
+    fun getBook(
+        @Path("id") id: Long
+    ): Single<Book>
+
 }

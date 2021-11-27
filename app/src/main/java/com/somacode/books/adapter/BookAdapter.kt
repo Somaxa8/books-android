@@ -8,7 +8,7 @@ import com.somacode.books.R
 import com.somacode.books.model.Book
 import com.somacode.books.service.tool.ConstantsTool
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.fragment_book.view.*
+import kotlinx.android.synthetic.main.item_book.view.*
 
 class BookAdapter(val books: MutableList<Book>): RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
 
@@ -24,15 +24,13 @@ class BookAdapter(val books: MutableList<Book>): RecyclerView.Adapter<BookAdapte
         }
     }
 
-    override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
-        val layoutManager = recyclerView.layoutManager
-        //recyclerView.onScrolled()
-        super.onAttachedToRecyclerView(recyclerView)
-    }
+    var onItemClick: (Int) -> Unit = {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        return BookViewHolder(layoutInflater.inflate(R.layout.fragment_book, parent, false))
+        val holder = BookViewHolder(layoutInflater.inflate(R.layout.item_book, parent, false))
+        holder.itemView.setOnClickListener { onItemClick(holder.bindingAdapterPosition) }
+        return holder
     }
 
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
