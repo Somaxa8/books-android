@@ -18,14 +18,15 @@ import retrofit2.Retrofit
 
 object BookService {
 
-    fun getBooks(bookAdapter: BookAdapter, books: MutableList<Book>, page: Int, size: Int, callback: () -> Unit) {
-        val response = BooksRetrofit.api.getBooks(page, size)
+    fun getBooks(bookAdapter: BookAdapter, books: MutableList<Book>, page: Int, size: Int, search: String, callback: () -> Unit) {
+        val response = BooksRetrofit.api.getBooks(page, size, search)
 
         response.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe({ res ->
             res.forEach {
                 books.add(it)
                 bookAdapter.notifyItemChanged(books.lastIndex)
             }
+
             callback()
         }, {
             it.printStackTrace()

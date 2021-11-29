@@ -19,7 +19,8 @@ interface BooksApi {
     @GET("/public/books")
     fun getBooks(
         @Query("page") page: Int,
-        @Query("size") size: Int
+        @Query("size") size: Int,
+        @Query("search") search: String
     ): Single<MutableList<Book>>
 
     @GET("/public/books/{id}")
