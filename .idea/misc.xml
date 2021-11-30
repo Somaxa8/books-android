@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.20520833333333333" />
+        <entry key="app/src/main/res/drawable/github.xml" value="0.19074074074074074" />
         <entry key="app/src/main/res/drawable/splash_background.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout-v26/activity_book.xml" value="0.2265625" />
         <entry key="app/src/main/res/layout/activity_book.xml" value="0.2" />
