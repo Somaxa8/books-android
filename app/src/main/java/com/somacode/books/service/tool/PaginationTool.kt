@@ -1,9 +1,10 @@
 package com.somacode.books.service.tool
 
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class PaginationTool(private val layoutManager: GridLayoutManager): RecyclerView.OnScrollListener() {
+abstract class PaginationTool(private val layoutManager: LinearLayoutManager): RecyclerView.OnScrollListener() {
 
     companion object {
         val SIZE: Int = 10

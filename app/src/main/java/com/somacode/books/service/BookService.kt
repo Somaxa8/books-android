@@ -3,6 +3,7 @@ package com.somacode.books.service
 import android.app.Activity
 import android.util.Log
 import androidx.fragment.app.FragmentActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.somacode.books.adapter.BookAdapter
 import com.somacode.books.controller.BookActivity
 import com.somacode.books.controller.HomeActivity
@@ -18,7 +19,7 @@ import retrofit2.Retrofit
 
 object BookService {
 
-    fun getBooks(bookAdapter: BookAdapter, books: MutableList<Book>, page: Int, size: Int, search: String, callback: () -> Unit) {
+    fun getBooks(bookAdapter: RecyclerView.Adapter<*>, books: MutableList<Book>, page: Int, size: Int, search: String, callback: () -> Unit) {
         val response = BooksRetrofit.api.getBooks(page, size, search)
 
         response.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe({ res ->
